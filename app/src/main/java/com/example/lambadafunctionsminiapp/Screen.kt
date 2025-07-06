@@ -114,7 +114,8 @@ fun Screen() {
                                     text = subject,
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Medium,
-                                    color = Blackish
+                                    color = Blackish,
+                                    modifier = Modifier.weight(1f)
                                 )
 
                                 if(subjectMarksList[index].isEmpty()) {
@@ -135,6 +136,7 @@ fun Screen() {
 
                                     Column(
                                         modifier = Modifier.fillMaxWidth()
+                                            .weight(2f)
                                             .padding(horizontal = 16.dp),
                                         horizontalAlignment = Alignment.Start
                                     ){
@@ -469,7 +471,7 @@ fun TakeSubjectDetails(
 fun getPerformance(marks: Int): String {
     return when {
         marks < 40 -> "Poor"
-        marks < 75 -> "Satisfactory"
+        marks < 75 -> "Average"
         else -> "Excellent"
     }
 }
